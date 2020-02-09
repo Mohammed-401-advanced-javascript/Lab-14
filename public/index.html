@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Landing Page</title>
+  </head>
+  <body>
+    <h1>My Login Page:</h1>
+    <a id="oauth" href="#">Login to My App</a>
+  </body>
+  <script>
+    let URL = 'https://github.com/login/oauth/authorize';
+
+    let options = {
+      client_id: '66065e9b3ee1887bceba',
+      redirect_uri: 'http://localhost:3000/oauth',
+      scope: 'read:user',
+      state: '401appconsent'
+    }
+
+    let QueryString = Object.keys(options).map((key) => {
+      return `${key}=` + encodeURIComponent(options[key]);
+    }).join('&');
+
+    console.log('long form qs:', QueryString);
+
+    let authURL = `${URL}?${QueryString}`;
+
+    console.log('the whole url:', authURL);
+    
+    let link = document.getElementById('oauth');
+    link.setAttribute('href', authURL);
+  </script>
+</html>
