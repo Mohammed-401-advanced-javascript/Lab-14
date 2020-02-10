@@ -1,7 +1,6 @@
 /* eslint-disable strict */
 'use strict';
 // 3rd Party Resources
-require('dotenv').config()
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
@@ -15,15 +14,13 @@ const app = express();
 
 
 // app using
-
-app.use(express.static('./public'));
-app.use(express.json());
 app.use(cors());
 app.use(morgan('dev'));
+app.use(express.json());
+app.use(express.static('./public'));
 app.use(authRouter);
 app.use(notFound);
 app.use(errorHandler);
-
 
 module.exports = {
   server: app,

@@ -1,4 +1,4 @@
-// eslint-disable-next-line strict
+/* eslint-disable strict */
 'use strict';
 
 require('dotenv').config();
