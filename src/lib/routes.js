@@ -6,9 +6,9 @@ const express = require('express');
 const authRouter = express.Router();
 const Users = require('./users.js');
 const basicAuth = require('./basic-auth-middleware.js');
-const oauth = require('./oauth-middleware.js');
+const oauth = require('./oauthmiddleware');
 const bearerAuth = require('./bearer-auth-middleware.js');
-const accessControlList = require('./acl-middleware.js');
+const accessControlList = require('./additional-routes');
 authRouter.post('/signup', (req, res,next) => {
   let user = new Users(req.body);
   user.save()

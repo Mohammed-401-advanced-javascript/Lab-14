@@ -2,7 +2,7 @@
 'use strict';
 
 require('dotenv').config();
-const server = require('./src/server.js');
+const server = require('./src/server');
 
 
 // Start up DB Server
